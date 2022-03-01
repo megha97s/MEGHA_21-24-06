@@ -1,0 +1,71 @@
+*  Generated for: PrimeSim
+*  Design library name: D_latch
+*  Design cell name: d_lat_ptg_test
+*  Design view name: schematic
+.lib 'saed32nm.lib' TT
+
+*Custom Compiler Version S-2021.09
+*Tue Mar  1 11:29:53 2022
+
+.global gnd!
+********************************************************************************
+* Library          : D_latch
+* Cell             : d_lat_ptg
+* View             : schematic
+* View Search List : hspice hspiceD schematic spice veriloga
+* View Stop List   : hspice hspiceD
+********************************************************************************
+.subckt d_lat_ptg d en gnd_1 out vcc
+xm9 net26 net28 net27 net27 n105 w=0.1u l=0.03u nf=1 m=1
+xm7 net22 en net23 net23 n105 w=0.1u l=0.03u nf=1 m=1
+xm4 out net22 net26 out n105 w=0.1u l=0.03u nf=1 m=1
+xm3 net28 out gnd_1 gnd_1 n105 w=0.1u l=0.03u nf=1 m=1
+xm0 out en d out n105 w=0.1u l=0.03u nf=1 m=1
+xm8 net26 net28 vcc vcc p105 w=0.1u l=0.03u nf=1 m=1
+xm6 net22 en vcc vcc p105 w=0.1u l=0.03u nf=1 m=1
+xm5 out en net26 out p105 w=0.1u l=0.03u nf=1 m=1
+xm2 net28 out vcc vcc p105 w=0.1u l=0.03u nf=1 m=1
+xm1 out net22 d out p105 w=0.1u l=0.03u nf=1 m=1
+.ends d_lat_ptg
+
+********************************************************************************
+* Library          : D_latch
+* Cell             : d_lat_ptg_test
+* View             : schematic
+* View Search List : hspice hspiceD schematic spice veriloga
+* View Stop List   : hspice hspiceD
+********************************************************************************
+xi0 d_in en gnd! op net6 d_lat_ptg
+v6 d_in gnd! dc=0 pulse ( 1.8 0 0 0.01u 0.01u 4u 8u )
+v2 en gnd! dc=0 pulse ( 1.8 0 0 0.01u 0.01u 2u 4u )
+v7 net6 gnd! dc=1.8
+c5 op gnd! c=1p
+
+
+
+
+
+
+
+
+.tran '1u' '20u' name=tran
+
+.option primesim_remove_probe_prefix = 0
+.probe v(*) i(*) level=1
+.probe tran v(d_in) v(en) v(op)
+
+.temp 25
+
+
+
+.option primesim_output=wdf
+
+
+.option parhier = LOCAL
+
+
+
+
+
+
+.end
