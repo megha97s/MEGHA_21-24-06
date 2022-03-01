@@ -45,7 +45,7 @@ The CMOS design for D-latch using pass transmission gate is shown as
 
 - TESTBENCH SYMBOL
 
-![image](https://github.com/Hiteshprp/d_latch/blob/main/Images/test_suite.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+![image](https://github.com/Hiteshprp/d_latch/blob/main/Images/Schematic_symbol_tb.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 - PRIMEWAVE WINDOW
 
 ![image](https://github.com/rahul-hebbar/XNOR_gate_using_synopsys/blob/main/images/testsuit_pathway.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                        
